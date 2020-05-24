@@ -1,0 +1,29 @@
+<div *ngIf="currentFileUpload" class="progress"  class="center-div">
+  <div class="progress-bar progress-bar-info progress-bar-striped"
+    role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+    aria-valuemin="0" aria-valuemax="100"
+    [ngStyle]="{width:progress.percentage+'%'}">
+    {{progress.percentage}}%</div>
+</div>
+
+<div class="input-group mb-3" class="center-div">
+  <div class="input-group-prepend">
+    <span class="input-group-text" (click)="upload()">Upload</span>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="selectFile($event)">
+    <label class="custom-file-label" for="inputGroupFile01">{{currentFileUpload.name}}</label>
+  </div>
+</div>
+
+<!--<div class="row align-items-center">
+  <label class="btn btn-default" class="rounded mx-auto d-block"> <input type="file"
+    (change)="selectFile($event)">
+  </label>
+   
+  <button class="btn btn-success" class="rounded mx-auto d-block" [disabled]="!selectedFiles"
+    (click)="upload()">Upload</button>
+
+</div>-->
+
+
